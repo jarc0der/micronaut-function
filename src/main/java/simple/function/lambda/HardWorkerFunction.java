@@ -1,4 +1,4 @@
-package simple.function;
+package simple.function.lambda;
 
 import io.micronaut.function.executor.FunctionInitializer;
 import io.micronaut.function.FunctionBean;

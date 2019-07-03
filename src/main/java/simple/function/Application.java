@@ -25,15 +25,8 @@ public class Application {
     }
 
     @Singleton
-    BasicAWSCredentials awsCredentials(final KinesisConfiguration kinesisConfiguration) {
-        return new BasicAWSCredentials(kinesisConfiguration.getAccessKey(), kinesisConfiguration.getSecretKey());
-    }
-
-    @Singleton
-    AmazonKinesisFirehose amazonKinesis(final BasicAWSCredentials basicAWSCredentials,
-                                        final KinesisConfiguration kinesisConfiguration) {
+    AmazonKinesisFirehose amazonKinesis(final KinesisConfiguration kinesisConfiguration) {
         return AmazonKinesisFirehoseClientBuilder.standard()
-                //.withCredentials(new AWSStaticCredentialsProvider(basicAWSCredentials))
                 .withRegion(kinesisConfiguration.getRegion())
                 .build();
     }

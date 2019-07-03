@@ -3,6 +3,6 @@ micronaut:
     name: simple-function
 
 kinesis:
-#  region: eu-central-1
-  region: us-east-1
+  region: eu-central-1
+#  region: us-east-1
   deliveryStream: stream
